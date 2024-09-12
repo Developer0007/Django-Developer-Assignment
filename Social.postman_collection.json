@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "48aefa16-d80d-4f3e-b28f-88547dc9a0b9",
+		"name": "Social",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23512191"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "help@james.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Test@123",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "A",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "J",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}/api/signup/",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "help@james.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Test@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}/api/login/",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN1}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/api/search/?keyword=a@j.com&page=2",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "a@j.com"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN1}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "help@james.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}/api/send_request/",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"send_request",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request action",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "action",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "a@j.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}/api/action_on_request/",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"action_on_request",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pending Request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN2}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/api/pending_request/",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"pending_request",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "request accepted by Others",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN1}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/api/request_acc_by_other/",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"request_acc_by_other",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All friends",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN1}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/api/all_friends/",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"all_friends",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN1",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NzU5OTg4LCJpYXQiOjE3MjYxNTUxODgsImp0aSI6ImM4ODdlMzI4NDgxNzRmOGM4MmFkYjUwZTNhMzlhMWZhIiwidXNlcl9pZCI6MX0.5r7PQTmT0ilFJE4q8Ua8QoCP8FtBI_ILyc1_PuEJfvA",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN2",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NzYxNTk3LCJpYXQiOjE3MjYxNTY3OTcsImp0aSI6IjVhNjg0OGZkZjNjMjQ5Yjg4ZmViMzM5YzJiODMzMGFjIiwidXNlcl9pZCI6Mn0.YtbAb-GI5Uv4MOs7IPLG-C3z2EAgvZ0tuAOhs4opKKI",
+			"type": "string"
+		}
+	]
+}
